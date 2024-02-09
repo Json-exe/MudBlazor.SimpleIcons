@@ -26,3 +26,6 @@ using MudBlazor.SimpleIcons;
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Roadmap
+- [ ] Write a SourceGenerator to reduce the size of the library (if possible)
