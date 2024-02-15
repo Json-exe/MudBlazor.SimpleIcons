@@ -7,6 +7,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RootNamespace>Json_exe.MudBlazor.SimpleIcons</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -19,7 +20,6 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>MudBlazor.SimpleIcons is a .NET library that provides SimpleIcons for MudBlazor.</Description>
     <Title>SimpleIcons for MudBlazor</Title>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   
   <ItemGroup>

@@ -10,12 +10,6 @@ if (fs.existsSync(fileName)) {
 const file = fs.createWriteStream(fileName);
 const regexReplaceQuotes = /\"/g;
 
-function toCamelCase(str: string): string {
-    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => 
-        index === 0 ? word.toUpperCase() : word.toLowerCase()
-    );
-}
-
 const snakeCaseToCamelCase = (str: string): string => {
     return str
         .replace(/[-_](.)/g, (match, group1) => group1.toUpperCase())
@@ -31,7 +25,10 @@ file.write(`namespace Json_exe.MudBlazor.SimpleIcons
     {
 `);
 
+let iconCount = 0;
+
 for (let key in icons) {
+    iconCount++;
     if (!icons[key] === undefined) continue;
     const icon = icons[key] as icons.SimpleIcon;
     if (icon.title === undefined) continue;
@@ -54,3 +51,4 @@ file.write(`
 
 file.end();
 console.log(`File ${fileName} has been created`);
+console.log(`Total icons: ${iconCount} (including undefined and empty ones)`);
