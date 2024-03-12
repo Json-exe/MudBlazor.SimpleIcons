@@ -52,3 +52,12 @@ file.write(`
 file.end();
 console.log(`File ${fileName} has been created`);
 console.log(`Total icons: ${iconCount} (including undefined and empty ones)`);
+console.log('Generating release notes...')
+const releaseNotesPath = ".\\RELEASE-NOTES.txt"
+// Read from args
+const args = process.argv.slice(2);
+const version = args.length > 0 ? args[0].replace(/[^0-9.]/g, '') : null;
+if (version === null || version.length < 3) throw new Error('Version not provided');
+const releaseNotes = `V-${version} includes around ${iconCount} icons from SimpleIcons`
+fs.writeFileSync(releaseNotesPath, releaseNotes);
+console.log(`Release notes have been generated at ${releaseNotesPath}`);

@@ -20,10 +20,16 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>MudBlazor.SimpleIcons is a .NET library that provides SimpleIcons for MudBlazor.</Description>
     <Title>SimpleIcons for MudBlazor</Title>
-    <PackageReleaseNotes>
-      V.1.2.0 includes around 3036 icons from SimpleIcons V.11.5.0
-    </PackageReleaseNotes>
   </PropertyGroup>
+  
+  <Target Name="PreparePackageReleaseNotesFromFile" BeforeTargets="GenerateNuspec">
+    <ReadLinesFromFile File="../RELEASE-NOTES.txt">
+      <Output TaskParameter="Lines" ItemName="ReleaseNoteLines"/>
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <PackageReleaseNotes>@(ReleaseNoteLines, '%0a')</PackageReleaseNotes>
+    </PropertyGroup>
+  </Target>
   
   <ItemGroup>
     <None Include="../README.md" Pack="true" PackagePath="\"/>
