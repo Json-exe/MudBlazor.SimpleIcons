@@ -59,5 +59,10 @@ const args = process.argv.slice(2);
 const version = args.length > 0 ? args[0].replace(/[^0-9.]/g, '') : null;
 if (version === null || version.length < 3) throw new Error('Version not provided');
 const releaseNotes = `V-${version} includes around ${iconCount} icons from SimpleIcons`
-fs.writeFileSync(releaseNotesPath, releaseNotes);
+if (fs.existsSync(releaseNotesPath)) {
+    fs.unlinkSync(releaseNotesPath);
+}
+const releaseNotesFile = fs.createWriteStream(releaseNotesPath);
+releaseNotesFile.write(releaseNotes);
+releaseNotesFile.end();
 console.log(`Release notes have been generated at ${releaseNotesPath}`);
