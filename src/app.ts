@@ -1,7 +1,7 @@
 import * as icons from 'simple-icons';
 import * as fs from 'fs';
 
-const fileName = '.\\Json_exe.MudBlazor.SimpleIcons\\output.cs';
+const fileName = './Json_exe.MudBlazor.SimpleIcons/output.cs';
 
 if (fs.existsSync(fileName)) {
     fs.unlinkSync(fileName);
@@ -53,7 +53,7 @@ file.end();
 console.log(`File ${fileName} has been created`);
 console.log(`Total icons: ${iconCount} (including undefined and empty ones)`);
 console.log('Generating release notes...')
-const releaseNotesPath = ".\\RELEASE-NOTES.txt"
+const releaseNotesPath = "./RELEASE-NOTES.txt"
 // Read from args
 const args = process.argv.slice(2);
 const version = args.length > 0 ? args[0].replace(/[^0-9.]/g, '') : null;
