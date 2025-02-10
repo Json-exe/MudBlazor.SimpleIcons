@@ -1,6 +1,9 @@
 # MudBlazor.SimpleIcons
 MudBlazor.SimpleIcons is a .NET library that provides SimpleIcons for MudBlazor.
 
+## Information:
+- Due to an error in the build script, the last updates did not contain any new features. This should now be fixed and all new icons should be available from version 1.6.0. 
+
 ## Installation
 
 You can install the package via Nuget:
