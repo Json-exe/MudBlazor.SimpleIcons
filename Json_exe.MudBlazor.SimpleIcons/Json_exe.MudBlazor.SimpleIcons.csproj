@@ -15,7 +15,7 @@
     <RepositoryType>Git</RepositoryType>
     <PackageProjectUrl>https://github.com/Json-exe/MudBlazor.SimpleIcons</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Json-exe/MudBlazor.SimpleIcons</RepositoryUrl>
-    <Copyright>Json-exe 2024</Copyright>
+    <Copyright>Json-exe 2025</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>MudBlazor.SimpleIcons is a .NET library that provides SimpleIcons for MudBlazor.</Description>
